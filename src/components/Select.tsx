@@ -7,6 +7,7 @@ const Select = styled.select`
   padding: 8px 12px;
   border-radius: 3px;
   font-weight: 600;
+  -webkit-appearance: none;
 `;
 
 export default Select;
