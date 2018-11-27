@@ -1,13 +1,15 @@
 import * as React from "react";
-import { connect } from "react-redux";
-import { AppState } from "src/reducer";
-import styled from "styled-components";
-import Layout from "src/Layout";
+import Layout from "../Layout";
 import Schedule from "./Schedule";
-import * as actions from "./actions";
+import Head from "../components/Head";
+import { AppState } from "../reducer";
+import { connect } from "react-redux";
+import styled from "styled-components";
+import Button from "../components/Button";
 import ScheduleEdit from "./ScheduleEdit";
-import Button from "src/components/Button";
-import LoadingIndicator from "src/components/LoadingIndicator";
+import * as scheduleActions from "./scheduleActions";
+import LoadingIndicator from "../components/LoadingIndicator";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -16,26 +18,9 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 
-const Title = styled.a`
-  margin: 0;
-  margin-bottom: 20px;
-  color: ${({ theme }) => theme.primaryColor};
-  font-weight: 600;
-  font-size: 36px;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
-const Row = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-const Flex = styled.div`
-  flex: 1;
+const Footer = styled.div`
+  margin-top: 40px;
+  margin-bottom: 10px;
 `;
 
 interface Props {
@@ -58,10 +43,7 @@ class ScheduleList extends React.Component<Props> {
     return (
       <Layout>
         <Container>
-          <Row>
-            <Title href="https://github.com/ardean/jsSchedule">jsSchedule</Title>
-            <Flex />
-          </Row>
+          <Head />
           {
             loadingSchedules && <LoadingIndicator />
           }
@@ -73,6 +55,9 @@ class ScheduleList extends React.Component<Props> {
           {
             !loadingSchedules && <Button onClick={this.onAddClick}>Add</Button>
           }
+          <Footer>
+            <Link to="/commands">Commands</Link>
+          </Footer>
         </Container>
       </Layout>
     );
@@ -101,10 +86,10 @@ const mapStateToProps = (state: AppState) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  loadSchedules: () => dispatch(actions.load()),
-  createSchedule: (schedule: Schedule) => dispatch(actions.create(schedule)),
-  updateSchedule: (schedule: Schedule) => dispatch(actions.update(schedule)),
-  removeSchedule: (scheduleId: string) => dispatch(actions.remove(scheduleId))
+  loadSchedules: () => dispatch(scheduleActions.load()),
+  createSchedule: (schedule: Schedule) => dispatch(scheduleActions.create(schedule)),
+  updateSchedule: (schedule: Schedule) => dispatch(scheduleActions.update(schedule)),
+  removeSchedule: (scheduleId: string) => dispatch(scheduleActions.remove(scheduleId))
 });
 
 export default connect(

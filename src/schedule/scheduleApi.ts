@@ -1,4 +1,4 @@
-import BaseApi from "src/BaseApi";
+import BaseApi from "../BaseApi";
 import Schedule from "./Schedule";
 
 class ScheduleApi extends BaseApi {

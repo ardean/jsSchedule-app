@@ -10,11 +10,12 @@
     "interface-name": false,
     "max-line-length": false,
     "member-access": false,
-    "jsx-no-multiline-js": false,
     "curly": false,
     "object-literal-sort-keys": false,
     "no-console": false,
     "arrow-parens": false,
+    "jsx-boolean-value": false,
+    "jsx-no-multiline-js": false,
     "jsx-curly-spacing": false
   }
 }

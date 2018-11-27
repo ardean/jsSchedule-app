@@ -1,5 +1,5 @@
 import { Dispatch } from "redux";
-import api from "./api";
+import scheduleApi from "./scheduleApi";
 import Schedule from "./Schedule";
 
 export interface ScheduleLoadingAction {
@@ -48,7 +48,7 @@ export const load = () => async (dispatch: Dispatch<ScheduleAction>): Promise<Sc
     type: "SCHEDULES_LOADING"
   });
 
-  const schedules = await api.load();
+  const schedules = await scheduleApi.load();
 
   return await dispatch({
     type: "SCHEDULES_LOAD",
@@ -62,7 +62,7 @@ export const create = (schedule: Schedule) => async (dispatch: Dispatch<Schedule
     schedule
   });
 
-  schedule = await api.create(schedule);
+  schedule = await scheduleApi.create(schedule);
 
   return await dispatch({
     type: "SCHEDULES_CREATE",
@@ -76,7 +76,7 @@ export const update = (schedule: Schedule) => async (dispatch: Dispatch<Schedule
     schedule
   });
 
-  schedule = await api.update(schedule);
+  schedule = await scheduleApi.update(schedule);
 
   return await dispatch({
     type: "SCHEDULES_UPDATE",
@@ -90,7 +90,7 @@ export const remove = (scheduleId: string) => async (dispatch: Dispatch<Schedule
     scheduleId
   });
 
-  await api.remove(scheduleId);
+  await scheduleApi.remove(scheduleId);
 
   return await dispatch({
     type: "SCHEDULES_REMOVE",

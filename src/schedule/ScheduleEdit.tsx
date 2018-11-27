@@ -1,10 +1,10 @@
 import * as React from "react";
 import styled from "styled-components";
+import Button from "../components/Button";
+import Select from "../components/Select";
+import TextInput from "../components/TextInput";
+import NumberInput from "../components/NumberInput";
 import Schedule, { Action, Interval } from "./Schedule";
-import Select from "src/components/Select";
-import Button from "src/components/Button";
-import TextInput from "src/components/TextInput";
-import NumberInput from "src/components/NumberInput";
 
 const Container = styled.div`
   display: flex;

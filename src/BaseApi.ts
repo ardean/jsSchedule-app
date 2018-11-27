@@ -1,4 +1,4 @@
-import { baseUrl } from "src/config";
+import { baseUrl } from "./config";
 
 export default class BaseApi {
   baseUrl: string = `${baseUrl}/api`;

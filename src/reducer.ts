@@ -1,6 +1,6 @@
 import { Reducer } from "redux";
 import Schedule from "./schedule/Schedule";
-import { ScheduleAction } from "./schedule/actions";
+import { ScheduleAction } from "./schedule/scheduleActions";
 
 export interface AppState {
   schedules: Schedule[];
