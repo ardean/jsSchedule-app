@@ -5,7 +5,7 @@ import { IoLogoGithub } from "react-icons/io";
 
 const Title = styled(Link)`
   margin: 0;
-  color: ${({ theme }) => theme.primaryColor};
+  color: ${props => props.theme.primaryColor};
   font-weight: 600;
   font-size: 36px;
 `;
@@ -24,6 +24,7 @@ const GithubLink = styled.a.attrs({ href: "https://github.com/ardean/jsSchedule"
   color: #222;
   height: 41px;
   line-height: 41px;
+  transition: color 0.33s ease;
 
   &:hover {
     color: ${({ theme }) => theme.primaryColor};

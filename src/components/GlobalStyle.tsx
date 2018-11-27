@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { theme } from "./Theme";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -8,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
+    color: ${() => theme.primaryColor};
     text-decoration: none;
   }
 

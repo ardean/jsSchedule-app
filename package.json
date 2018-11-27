@@ -1,6 +1,6 @@
 {
   "name": "jsschedule-app",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
