@@ -64,7 +64,7 @@ export default class ScheduleEdit extends React.Component<Props> {
           <Select onChange={this.onActionChange} value={schedule.action}>
             <option value="shutdown">Shutdown</option>
             <option value="reboot">Reboot</option>
-            <option value="execute">Execute Command</option>
+            {/* <option value="execute">Execute Command</option> */}
           </Select>
         </Col>
         {
