@@ -39,6 +39,7 @@ const TitleTextInput = styled(TextInput)`
   outline: none;
   font-size: 22px;
   font-weight: 600;
+  width: 100%;
 `;
 
 interface Props {
